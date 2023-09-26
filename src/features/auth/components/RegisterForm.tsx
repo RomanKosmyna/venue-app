@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import Form from "@/src/components/Form/Form";
 import { SubmitHandler } from "react-hook-form";
 import { RegisterFormInput } from "../types/register";
 import InputField from "@/src/components/Form/InputField";
 import { z } from "zod";
-import clsx from "clsx";
 
 const schema = z.object({
     email: z.string().email(),
@@ -14,10 +14,15 @@ const schema = z.object({
     password: z.string().min(7).max(12)
 });
 
-const test = clsx("border", "bg");
+const onSuccess = async () => {
+    redirect('/signin');
+};
 
 export default function RegisterForm() {
-    const onSubmit: SubmitHandler<RegisterFormInput> = data => console.log(data);
+    const onSubmit: SubmitHandler<RegisterFormInput> = data => {
+        console.log(data);
+        onSuccess();
+    };
 
     return (
         <div className="w-4/5 max-w-[420px] flex flex-col space-y-6">
@@ -57,9 +62,9 @@ export default function RegisterForm() {
                     </>
                 )}
             </Form>
-            <p className="text-center text-[#A3A3A3] text-sm">
+            <p className="text-center text-grey-1 text-sm">
                 Already have an account?{" "}
-                <Link href={"/signin"} className="text-[#A3A3A3] text-sm underline underline-offset-4">Sign In</Link>
+                <Link href={"/signin"} className="text-grey-1 text-sm underline underline-offset-4">Sign In</Link>
             </p>
         </div>
     )

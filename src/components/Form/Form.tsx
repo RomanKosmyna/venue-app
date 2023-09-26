@@ -1,7 +1,7 @@
 "use client";
 
 import { FieldValues, SubmitHandler, UseFormReturn, useForm } from "react-hook-form";
-import { Schema, ZodType, ZodTypeDef, ZodObject } from "zod";
+import { ZodType, ZodTypeDef } from "zod";
 import { zodResolver } from '@hookform/resolvers/zod';
 import clsx from "clsx";
 
