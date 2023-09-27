@@ -9,8 +9,8 @@ export default function Header() {
     if (pathname === "/signup" || pathname === "/signin") return null;
 
     return (
-        <header className="w-full h-16">
-            <nav className="w-full h-full px-5 flex items-center">
+        <header className="w-full h-12">
+            <nav className="w-full max-w-[90rem] mx-auto h-full px-5 flex items-center">
                 <ul className="flex ml-auto bg-[#0a0a0a] text-grey-1 font-medium">
                     <li>
                         <Link href={"/"} className={`hover:underline ${pathname === "/" ? "text-white" : ""}`}>Home</Link>

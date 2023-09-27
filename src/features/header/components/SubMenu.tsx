@@ -10,9 +10,9 @@ export default function SubMenu() {
 
     return (
         <div className="w-full h-11 bg-[#0a0a0a]">
-            <nav className="w-full h-full px-5 flex items-center">
+            <nav className="w-full max-w-[90rem] mx-auto h-full px-5 flex items-center">
                 <ul className="flex relative -left-4 text-[#888888]">
-                    <li className="px-4 py-2">
+                    <li className="relative px-4 py-2">
                         <Link href={"/overview"}>Overview</Link>
                     </li>
                     <li className="px-4 py-2">

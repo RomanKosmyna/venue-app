@@ -18,7 +18,11 @@ const config: Config = {
         'background': 'hsla(0, 0%, 3.9%, 1)',
         'hsla': 'hsla(0, 0%, 9%, 1)',
         'input-border': "hsla(0, 0%, 14.9%, 1)",
-        'grey-1': '#A3A3A3'
+        'grey-1': '#A3A3A3',
+        'hsla-grey-1': 'hsla(0,0%,100%,.14)'
+      },
+      screens: {
+        'md': '860px'
       }
     },
   },
