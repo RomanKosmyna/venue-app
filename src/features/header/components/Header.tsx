@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import MobileMenu from "../../mobileMenu/components/MobileMenu";
 
 export default function Header() {
     const pathname = usePathname();
@@ -11,7 +12,7 @@ export default function Header() {
     return (
         <header className="w-full h-12">
             <nav className="w-full max-w-[90rem] mx-auto h-full px-5 flex items-center">
-                <ul className="flex ml-auto bg-[#0a0a0a] text-grey-1 font-medium">
+                <ul className="hidden md:flex ml-auto bg-[#0a0a0a] text-grey-1 font-medium">
                     <li>
                         <Link href={"/"} className={`hover:underline ${pathname === "/" ? "text-white" : ""}`}>Home</Link>
                     </li>
@@ -28,6 +29,7 @@ export default function Header() {
                         <Link href={"/"} className="hover:underline">Personal Account</Link>
                     </li>
                 </ul>
+                <MobileMenu/>
             </nav>
         </header>
     )

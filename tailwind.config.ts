@@ -27,7 +27,7 @@ const config: Config = {
         'clamp-heading-3': 'clamp(1.6rem, 3vw, 3rem)'
       },
       screens: {
-        'md': '580px',
+        'md': '640px',
         'lg': '1100px'
       }
     },
