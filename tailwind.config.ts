@@ -16,13 +16,19 @@ const config: Config = {
       },
       colors: {
         'background': 'hsla(0, 0%, 3.9%, 1)',
+        'hover-card-background': 'hsla(0, 0%, 8%, 1)',
         'hsla': 'hsla(0, 0%, 9%, 1)',
         'input-border': "hsla(0, 0%, 14.9%, 1)",
         'grey-1': '#A3A3A3',
         'hsla-grey-1': 'hsla(0,0%,100%,.14)'
       },
+      fontSize: {
+        'clamp-heading-2': 'clamp(2rem, 3.5vw, 4rem)',
+        'clamp-heading-3': 'clamp(1.6rem, 3vw, 3rem)'
+      },
       screens: {
-        'md': '860px'
+        'md': '580px',
+        'lg': '1100px'
       }
     },
   },

@@ -1,4 +1,5 @@
 export type TVenue = {
+    id: number;
     name: string;
     photo: string;
     address: string;

@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={clsx("bg-background", inter.className)}>
+      <body className={clsx("bg-background min-h-screen", inter.className)}>
         <HeaderContainer />
         {children}
       </body>

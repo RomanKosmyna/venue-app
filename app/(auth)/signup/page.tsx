@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     description: 'Create an account',
 }
 
-export default function SignUp() {
+export default function SignUpPage() {
     return (
         <main className="flex min-h-screen flex-col items-center p-4">
             <RegisterForm />

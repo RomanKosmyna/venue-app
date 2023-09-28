@@ -1,2 +1,2 @@
 export * from "./RenderVenues";
-export * from "./Venue";
+export * from "./VenueCard";

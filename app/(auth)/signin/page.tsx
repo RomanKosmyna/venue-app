@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     description: 'Log into your account',
 }
 
-export default function SignIn() {
+export default function SignInPage() {
     return (
         <main className="flex min-h-screen flex-col items-center p-4">
             <LoginForm/>
