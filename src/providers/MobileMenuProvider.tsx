@@ -9,6 +9,7 @@ type Props = {
 export type TMobileMenu = {
     isMenuOpen: boolean;
     toggleMenuState: React.Dispatch<React.SetStateAction<boolean>>;
+    closeMenu: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const MobileMenuContext = createContext<TMobileMenu | null>(null);
@@ -18,6 +19,10 @@ export default function MobileMenuProvider({ children }: Props) {
 
     const toggleMenuState = () => {
         setIsMenuOpen(prevState => !prevState);
+    };
+
+    const closeMenu = () => {
+        setIsMenuOpen(false);
     };
 
     useEffect(() => {
@@ -30,7 +35,7 @@ export default function MobileMenuProvider({ children }: Props) {
     }, [isMenuOpen]);
 
     return (
-        <MobileMenuContext.Provider value={{ isMenuOpen, toggleMenuState }}>
+        <MobileMenuContext.Provider value={{ isMenuOpen, toggleMenuState, closeMenu }}>
             {children}
         </MobileMenuContext.Provider>
     )

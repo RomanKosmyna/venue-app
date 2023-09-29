@@ -9,7 +9,7 @@ export default function MobileMenu() {
 
     if (context === null) return null;
 
-    const {isMenuOpen, toggleMenuState} = context;
+    const { isMenuOpen, toggleMenuState } = context;
 
     const click = () => {
         toggleMenuState(isMenuOpen);
