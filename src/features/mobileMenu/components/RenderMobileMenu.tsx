@@ -10,16 +10,16 @@ import userImage from "@/src/public/images/user.jpg";
 export default function RenderMobileMenu() {
     const context = useContext<TMobileMenu | null>(MobileMenuContext);
     const route = usePathname();
-    
+
     if (context === null) return null;
 
     const { isMenuOpen, closeMenu } = context;
 
-    useEffect(() => {
-        if (route === "/signin" || route === "/signup") {
-            closeMenu(false);
-        }
-    }, [route]);
+    // useEffect(() => {
+    //     if (route === "/signin" || route === "/signup") {
+    //         closeMenu(false);
+    //     }
+    // }, [route]);
 
 
     return (
@@ -34,13 +34,40 @@ export default function RenderMobileMenu() {
                             </span>
                         </li>
                         <li className="w-full h-[48px] border-b border-hsla-grey-1">
-                            <Link href={"/account/venues"} className="w-full h-full flex items-center text-grey-1">Your Venues</Link>
+                            <Link
+                                href={"/"}
+                                className="w-full h-full flex items-center text-grey-1"
+                                onClick={() => closeMenu(false)}
+                            >
+                                Home
+                            </Link>
                         </li>
                         <li className="w-full h-[48px] border-b border-hsla-grey-1">
-                            <Link href={"/account"} className="w-full h-full flex items-center text-grey-1">Settings</Link>
+                            <Link
+                                href={"/account/venues"}
+                                className="w-full h-full flex items-center text-grey-1"
+                                onClick={() => closeMenu(false)}
+                            >
+                                Your Venues
+                            </Link>
                         </li>
                         <li className="w-full h-[48px] border-b border-hsla-grey-1">
-                            <Link href={"/signin"} className="w-full h-full flex items-center text-grey-1">Log Out</Link>
+                            <Link
+                                href={"/account"}
+                                className="w-full h-full flex items-center text-grey-1"
+                                onClick={() => closeMenu(false)}
+                            >
+                                Settings
+                            </Link>
+                        </li>
+                        <li className="w-full h-[48px] border-b border-hsla-grey-1">
+                            <Link
+                                href={"/signin"}
+                                className="w-full h-full flex items-center text-grey-1"
+                                onClick={() => closeMenu(false)}
+                            >
+                                Log Out
+                            </Link>
                         </li>
                     </ul>
                 </nav>
