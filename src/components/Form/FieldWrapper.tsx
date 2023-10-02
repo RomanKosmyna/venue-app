@@ -10,9 +10,11 @@ export type FieldWrapperProps = {
 export default function FieldWrapper({ label, children, name, error }: FieldWrapperProps) {
     return (
         <div className="flex flex-col">
-            <label htmlFor={name} className="text-white">
-                {label}
-            </label>
+            {label && (
+                <label htmlFor={name} className="text-white">
+                    {label}
+                </label>
+            )}
             {children}
             {error?.message && (
                 <div className="text-[red]">{error.message}</div>

@@ -16,6 +16,7 @@ const config: Config = {
       },
       colors: {
         'background': 'hsla(0, 0%, 3.9%, 1)',
+        'background-input-field': 'hsla(0, 0%, 6.9%, 1)',
         'hover-card-background': 'hsla(0, 0%, 8%, 1)',
         'hsla': 'hsla(0, 0%, 9%, 1)',
         'input-border': "hsla(0, 0%, 14.9%, 1)",
