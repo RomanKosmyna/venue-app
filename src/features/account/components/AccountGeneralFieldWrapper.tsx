@@ -4,25 +4,25 @@ import { AccountGeneralUsername } from "../types/accountGeneral";
 import Form from "@/src/components/Form/Form";
 import InputField from "@/src/components/Form/InputField";
 import { SubmitHandler } from "react-hook-form";
-import { z } from "zod";
-
-const schema = z.object({
-    username: z.string().min(5).max(10),
-});
+import { Schema } from "zod";
 
 type Props = {
+    heading: string;
     name: string;
     description: string;
     instruction: string;
+    schema?: Schema;
 };
 
-export default function AccountGeneralFieldWrapper({ name, description, instruction }: Props) {
+export default function AccountGeneralFieldWrapper({ heading, name, description, instruction, schema }: Props) {
     const onSubmit: SubmitHandler<AccountGeneralUsername> = data => {
         console.log(data);
     };
 
+    const inputName = name.toLowerCase;
+console.log
     return (
-        <Form<AccountGeneralUsername, typeof schema>
+        <Form<AccountGeneralUsername>
             onSubmit={onSubmit}
             schema={schema}
             className="w-full flex flex-col space-y-4 rounded-lg border border-hsla-grey-1"
@@ -30,14 +30,14 @@ export default function AccountGeneralFieldWrapper({ name, description, instruct
             {({ register, formState }) => (
                 <>
                     <div className="w-full p-6 bg-background-input-field border-b border-hsla-grey-1">
-                        <h2 className="font-[600] text-[1.25rem] tracking-[-.020625rem] text-hsla-white-1">{name}</h2>
+                        <h2 className="font-[600] text-[1.25rem] tracking-[-.020625rem] text-hsla-white-1">{heading}</h2>
                         <p className="text-white text-[.875rem] my-2">{description}</p>
                         <InputField<AccountGeneralUsername>
                             type="text"
                             register={register}
-                            error={formState.errors['username']}
+                            error={formState.errors[name as keyof AccountGeneralUsername]}
                             name="username"
-                            className={"w-full h-[3rem] bg-black outline-none my-3 px-2 rounded-[5px] border border-hsla-grey-1"}
+                            className={"w-full h-[3rem] bg-black outline-none my-3 px-4 rounded-[5px] text-[#FAFAFA] border border-hsla-grey-1"}
                         />
                     </div>
                     <div className="w-full flex flex-col justify-center items-center pt-2 px-6 pb-6">
